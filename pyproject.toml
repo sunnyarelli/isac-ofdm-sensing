@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "isac-ofdm-sensing"
+version = "0.1.0"
+description = "OFDM-based integrated sensing and communication (ISAC) range-Doppler toolkit"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Sunny Arelli"}]
+keywords = ["6G", "3GPP", "Release 20", "wireless", "5G-Advanced"]
+dependencies = ["numpy>=1.22"]
+
+[project.urls]
+Homepage = "https://github.com/sunnyarelli/isac-ofdm-sensing"
+Issues = "https://github.com/sunnyarelli/isac-ofdm-sensing/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+isac = "isac.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
